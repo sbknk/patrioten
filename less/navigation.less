@@ -1,0 +1,257 @@
+/*
+* optimized for a mobile first approach
+*/
+
+.navbar-toggle {
+    margin: @padding-base-vertical*2 0 0 0;
+    border-radius: 0;
+    background: @white;
+    .icon-bar {
+        background: @dp-dark-grey;
+    }
+}
+
+.navbar-toggle-language {
+    margin-right: 20px;
+    padding: 4px 10px 3px 11px;
+    color: @dp-dark-grey;
+}
+
+#topnav-mobile {
+    .close {
+        font-size: 40px;
+        position: absolute;
+        right: @padding-base-vertical;
+        z-index: 1099;
+    }
+    .navmenu-language {
+        margin-top: @padding-base-vertical*6;
+    }
+    .navmenu-nav {
+        > li > a {
+            font-size: @font-size-large;
+            border-bottom: 1px solid @dp-x-light-grey;
+        }
+        .current-language {
+            font-size: @font-size-large;
+            border-bottom: 1px solid @dp-x-light-grey;
+            padding: @nav-link-padding;
+            color: @dp-dark-grey;
+        }
+    }
+}
+
+#topnav {
+    background-color: @background-color;
+    border-bottom: 1px solid @dp-x-light-grey;
+    .nav {
+        border-bottom: 3px solid @gray-light;
+        border-top: 3px solid @gray-light;
+    }
+    .nav li {
+        a {
+            color: @text-color;
+            font-size: @font-size-medium;
+            font-weight: normal;
+            text-transform: uppercase;
+            padding: 25px 15px;
+            border-top: 0px;
+            border-left: 3px solid transparent;
+            .transition(0.2s ease-in-out);
+        }
+    }
+    .nav li a:hover,
+    .nav li a:focus,
+    .nav .active a,
+    .nav .active a:hover,
+    .nav .active a:focus,
+    .nav .current a,
+    .nav .current a:hover,
+    .nav .current a:focus {
+        border-left: 3px solid #b31b21;
+        background: #f5f5f5;
+    }
+    .navbar-brand {
+        width: 32px;
+        height: 40px;
+        padding: @padding-base-horizontal/2 0;
+        margin: @padding-base-horizontal 0;
+        .text-hide();
+        background: url('@{images-base-path}/logo_mobile_small.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .container > .navbar-header {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    &.shrink {
+        border-bottom: 1px solid @dp-x-light-grey;
+        .box-shadow(0px 3px 6px 0px rgba(0,0,0,0.25));
+    }
+}
+
+#pagenav {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    z-index: 99;
+    margin-top: -54px;
+    .pagination-arrow {
+        display: inline-block;
+        position: fixed;
+        top: 43%;
+        background: rgba(250,250,250,0.9);
+        color: @text-color;
+        width: 250px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .transition(0.2s ease-in-out);
+        &:after {
+            font: normal normal normal 20px/1 'Material-Design-Icons';
+            font-size: @font-size-large*3;
+            position: absolute;
+            background: rgba(250,250,250,0.9);
+            padding: 2px;
+            top: 0;
+            transform: translateZ(1px);
+        }
+    }
+    .prev {
+        left: -200px;
+        padding: 20px 75px 20px 20px;
+    }
+
+    .prev:after {
+        content: "\e8a8";
+        right: 0;
+    }
+
+    .prev:hover {
+        left: 0;
+    }
+
+    .next {
+        right: -200px;
+        padding: 20px 20px 20px 75px;
+    }
+
+    .next:after {
+        content: "\e8a9";
+        left: 0;
+    }
+
+    .next:hover {
+        right: 0;
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .navbar-language {
+        .current-language {
+            .hidden;
+        }
+        .language-icon {
+            color: @dp-x-light-grey;
+            margin: @padding-base-horizontal/2 @padding-base-vertical 0 0;
+            font-size: @font-size-large;
+        }
+        ul {
+            padding: 0px;
+            margin: @padding-base-horizontal/4 0 0;
+            list-style-type: none;
+            li {
+                display: inline-block;
+                color: @dp-light-grey;
+                font-size: @font-size-small;
+
+                a {
+                    color: @dp-x-light-grey;
+                    font-size: @font-size-small;
+                    font-weight: 700;
+                }
+            }
+            li + li::before {
+//                content: " | ";
+            }
+        }
+    }
+
+    #topnav {
+        margin-top: 30px;
+        .nav {
+            border: 0;
+            float: right;
+            margin: 0;
+        }
+        .nav li a {
+            border-top: 3px solid transparent;
+            border-left: 0 !important;
+        }
+        .nav li a:hover,
+        .nav li a:focus,
+        .nav .active a,
+        .nav .active a:hover,
+        .nav .active a:focus,
+        .nav .current a,
+        .nav .current a:hover,
+        .nav .current a:focus {
+            background: #f5f5f5;
+            border-top: 3px solid #b31b21;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+        > .container .navbar-brand {
+            margin: @padding-base-horizontal*1.5 0 0 0;
+        }
+    }
+}
+
+@media (min-width: @screen-md-min) {
+    #topnav {
+        border-bottom: none;
+        .nav li {
+            a {
+                padding: 35px 15px;
+            }
+        }
+        > .container .navbar-brand {
+            margin: 0;
+        }
+        .navbar-brand {
+            border-top: 3px solid transparent;
+            background-image: url('@{images-base-path}/logo.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 231px;
+            height: 104px;
+        }
+        .navbar-brand:hover,
+        .navbar-brand:focus {
+            border-top: 3px solid #b31b21;
+        }
+        &.shrink {
+            .navbar-brand {
+                width: 32px;
+                height: 40px;
+                margin: 0;
+                background: url('@{images-base-path}/logo_mobile_small.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+            .nav li {
+                a {
+                    padding: @padding-base-horizontal 15px;
+                }
+                &:last-child {
+                    a {
+                        padding: @padding-base-horizontal 15px;
+                    }
+                }
+            }
+        }
+    }
+}

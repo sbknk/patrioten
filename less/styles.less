@@ -1,0 +1,184 @@
+/*
+ * "DigitalPatrioten AG"
+ * basic stylesheet
+ * optimized for a mobile first approach
+ */
+@import "../bower_components/bootstrap/less/bootstrap";
+@import "icons_material_design";
+@import "mixins";
+@import "variables";
+@import "buttons";
+@import "type";
+@import "fonts";
+@import "navigation";
+@import "carousel";
+@import "accordion";
+@import "panel";
+@import "footer";
+@import "typo3";
+@import "elements";
+@import "../bower_components/jasny-bootstrap/less/variables";
+@import "../bower_components/jasny-bootstrap/less/offcanvas";
+@import "../bower_components/jasny-bootstrap/less/navmenu";
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-bottom: 0px;
+    background: @background-color;
+    -webkit-font-smoothing: antialiased;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.tab-focus() {
+    outline: none;
+}
+
+.img-circle {
+    width: auto;
+}
+
+@-moz-document url-prefix() {
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    img {
+        max-width: 100%;
+    }
+}
+
+#contentMain {
+    margin-top: 84px;
+    .row {
+        margin-bottom: @line-height-computed*2;
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    .row.csc-default > [class*="col-"] {
+        margin-bottom: @padding-base-vertical*4;
+    }
+
+    #contentMain {
+        .row {
+            margin-bottom: @line-height-computed;
+        }
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    #contentMain {
+        margin-top: 174px;
+    }
+    #areaFeature {
+        margin-top: -40px;
+    }
+}
+
+.row-flex, .row-flex > div[class*='col-'] {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.row-flex-wrap {
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    flex: 0;
+}
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+    margin: -.2px; /* hack adjust for wrapping */
+}
+
+.container-flex > div[class*='col-'] div, .row-flex > div[class*='col-'] > div {
+    width: 100%;
+}
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+    flex-flow: column nowrap;
+}
+
+.flex-grow {
+    display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+@media (min-width: @screen-md-min) {
+    .flex-vertical-center {
+        .flex-vertical-center;
+    }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .row-sm-height, .row-sm-height > div[class*='col-']{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+    .row-sm-height > div[class*='col-'] {
+        margin: -.2px; /* hack adjust for wrapping */
+    }
+
+    .container-sm-height > div[class*='col-'] > div, .row-sm-height > div[class*='col-'] > div {
+        width: 100%;
+    }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .row-md-height, .row-md-height > div[class*='col-']{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+    .row-md-height > div[class*='col-'] {
+        margin: -.2px; /* hack adjust for wrapping */
+    }
+
+    .container-md-height > div[class*='col-'] > div, .row-md-height > div[class*='col-'] > div {
+        width: 100%;
+    }
+}
+
+@media (min-width: @screen-lg-min) {
+    .row-lg-height, .row-lg-height > div[class*='col-']{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+    .row-lg-height > div[class*='col-'] {
+        margin: -.2px; /* hack adjust for wrapping */
+    }
+
+    .container-lg-height > div[class*='col-'] > div, .row-lg-height > div[class*='col-'] > div {
+        width: 100%;
+    }
+}

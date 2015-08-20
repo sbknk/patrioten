@@ -1,0 +1,225 @@
+::selection {
+    background: @dp-red;
+    color: @white;
+}
+::-moz-selection {
+    background: @dp-red;
+    color: @white;
+}
+
+strong {
+    font-family: @font-family-sans-serif-condensed;
+    font-weight: bold;
+}
+// areaMain
+#areaMain, #areaFeature {
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: (@line-height-computed / 2);
+    }
+
+    h2 {
+        padding-bottom: @padding-large-vertical;
+        margin-bottom: (@line-height-computed / 2);
+        &.text-underlined {
+            border-bottom: 1px solid @dp-x-light-grey;
+        }
+    }
+
+    h3 {
+        margin-bottom: floor(@line-height-computed / 2.4);
+        &.text-underlined {
+            padding-bottom: @padding-base-vertical * 3;
+            border-bottom: 1px solid @dp-x-light-grey;
+        }
+    }
+
+    .csc-header {
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: @line-height-computed;
+        }
+
+        h2 {
+            padding-bottom: @padding-large-vertical;
+            margin-bottom: @line-height-computed;
+            &.text-underlined {
+                border-bottom: 1px solid @dp-x-light-grey;
+            }
+        }
+
+        h3 {
+            margin-bottom: @padding-base-vertical * 3;
+            &.text-underlined {
+                padding-bottom: @padding-base-vertical * 3;
+                border-bottom: 1px solid @dp-x-light-grey;
+            }
+        }
+    }
+
+    span.important {
+        color: @dp-red;
+    }
+
+   .csc-default {
+       ul, ol {
+           &:last-child {
+               margin-bottom: 0;
+           }
+       }
+       p {
+           margin-bottom: @line-height-computed;
+       }
+   }
+
+   .csc-default, .csc-textpic {
+        ul:not([class]) {
+            display: table;
+            padding: 0;
+            > li {
+                display: table-row;
+                list-style-type: none;
+                line-height: 1.7;
+                &:before {
+                    display: table-cell;
+                    content: "•";
+                    font-weight: bold;
+                    color: @dp-red;
+                    padding-right: ceil(@padding-base-horizontal*1.2);
+                    padding-left: ceil(@padding-base-horizontal/1.6);
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+
+    .csc-bulletlist {
+        display: table;
+        padding: 0;
+        > li {
+            display: table-row;
+            list-style-type: none;
+            line-height: 1.7;
+            &:before {
+                display: table-cell;
+                content: "•";
+                font-weight: bold;
+                color: @dp-red;
+                padding-right: ceil(@padding-base-horizontal*1.3);
+                padding-left: @padding-base-horizontal/2;
+                vertical-align: top;
+            }
+        }
+    }
+
+    .list-features, .list-advantages {
+        display: table;
+        padding: 0;
+        > li {
+            display: table-row;
+            list-style-type: none;
+            line-height: 1.7;
+            &:before {
+                display: table-cell;
+                font: normal normal normal 20px/1 'Material-Design-Icons';
+                content: "\e8a7";
+                color: @dp-red;
+                padding-right: ceil(@padding-base-horizontal/1.7);
+                vertical-align: top;
+            }
+        }
+    }
+    .list-advantages > li:before {
+        content: "\e701";
+        color: @text-color;
+    }
+
+    .csc-header h2 {
+        border-bottom: 3px solid #f0f0f0;
+        position: relative;
+        padding-bottom: @padding-large-vertical;
+        &:before {
+            position: absolute;
+            bottom: -3px;
+            height: 3px;
+            width: 48px;
+            background: @dp-red;
+            content: "";
+        }
+    }
+
+    .csc-header {
+        overflow: hidden;
+    }
+
+    .csc-header div.ci-color-primary h1, .csc-header div.ci-color-secondary h1 {
+        color: @dp-red;
+        font-size: 48px;
+        line-height: 1.3;
+        background: none;
+        border: none;
+        font-family: @font-family-sans-serif-condensed;
+        font-weight: bold;
+        display: inline-block;
+        padding: 0 25px;
+        position: relative;
+
+        &:before,
+        &:after {
+            background: @dp-x-light-grey;
+            content: "";
+            display: block;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            width: 400%;
+            margin-top: 1px;
+        }
+
+        &:before {
+            right: 100%;
+        }
+        &:after {
+            left: 100%;
+        }
+        @media screen and (min-width: @screen-sm-min) {
+            font-size: 48px;
+            span {
+//                padding: 0 40px;
+            }
+        }
+    }
+
+    .csc-header div.ci-color-secondary h1 {
+        color: @text-color;
+        margin: @line-height-computed 0 @line-height-computed 0;
+    }
+}
+
+.figure-reason {
+    color: #d0171d;
+}
+
+.bg {
+    padding: @padding-bg-vertical @padding-bg-horizontal;
+}
+
+.bg-primary {
+    // Given the contrast here, this is the only class to have its color inverted
+    // automatically.
+    color: @text-color;
+    .bg-variant(@gray-footer);
+}
+.bg-success {
+    .bg-variant(@state-success-bg);
+}
+.bg-info {
+    .bg-variant(@state-info-bg);
+}
+.bg-warning {
+    .bg-variant(@state-warning-bg);
+}
+.bg-danger {
+    .bg-variant(@state-danger-bg);
+}

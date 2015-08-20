@@ -1,0 +1,114 @@
+.carousel {
+    padding: @padding-large-vertical;
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
+    background: @white;
+    border: 1px solid #e7e7e7;
+    overflow: hidden;
+}
+
+.carousel-caption {
+    bottom: auto;
+    top: 176px;
+    left: 642px;
+    right: auto;
+    color: @text-color;
+    text-shadow: none;
+    text-align: left;
+    font-family: @font-family-sans-serif-condensed;
+    font-weight: bold;
+    ul li:before {
+        padding-right: @padding-base-horizontal !important;
+    }
+    .hidden-xs();
+    @media (max-width: @screen-sm-max) {
+        left: 488px;
+        top:124px;
+    }
+}
+
+.carousel-outer-wrap {
+    position: relative;
+}
+
+.carousel-inner {
+    div.csc-textpic .csc-textpic-imagewrap .csc-textpic-image {
+        margin: 0;
+    }
+    .item img {
+        .img-responsive();
+    }
+}
+
+.carousel-control {
+    .opacity(1);
+
+    border-top: 1px solid @dp-x-light-grey;
+    border-bottom: 1px solid @dp-x-light-grey;
+    border-radius: 0;
+    width: 30px;
+    height: 60px;
+
+    top: 50%;
+    bottom: 50%;
+    margin-top: -30px;
+    text-shadow: none;
+    box-shadow: none;
+    &.left {
+        background: @white;
+        border-left: 1px solid @dp-x-light-grey;
+        left: 0;
+        @media (max-width: @screen-sm-max) {
+            border-left: none;
+            border-right: 1px solid @dp-x-light-grey;
+        }
+    }
+    &.right {
+        background: @white;
+        border-right: 1px solid @dp-x-light-grey;
+        right: 0;
+        @media (max-width: @screen-sm-max) {
+            border-right: none;
+            border-left: 1px solid @dp-x-light-grey;
+        }
+    }
+    .mdi-navigation-chevron-left,
+    .mdi-navigation-chevron-right,
+    .icon-prev,
+    .icon-next {
+        font-size: @carousel-control-font-size;
+        display: inherit;
+        line-height: 60px;
+        color: @text-color;
+    }
+    i.mdi-navigation-chevron-left {
+        margin-left: -5px;
+    }
+    i.mdi-navigation-chevron-right {
+        margin-left: -5px;
+    }
+    @media (min-width: @screen-md-min) {
+        &.left {
+            left: -30px;
+        }
+
+        &.right {
+            right: -30px;
+        }
+    }
+}
+
+.no-frame {
+    .carousel {
+        border: none;
+    }
+    .carousel-control {
+        &.left {
+            left: 0;
+        }
+
+        &.right {
+            right: 0;
+        }
+    }
+}

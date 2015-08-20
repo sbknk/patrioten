@@ -1,0 +1,22 @@
+{
+    "name": "digitalpatrioten-recruiting",
+    "version": "1.0.0",
+    "authors": [
+        "DigitalPatrioten AG <info@digitalpatrioten.com>"
+    ],
+    "license": "MIT",
+    "homepage": "www.digitalpatrioten.com",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "3.3.4",
+        "jasny-bootstrap": "3.1.3",
+        "font-awesome": "4.3.0",
+        "bootstrap-material-design": "*"
+    }
+}
